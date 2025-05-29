@@ -1,7 +1,7 @@
 import {renderBlock} from "../utils.js"
 
 export default (props) => {
-        let html_str = `        
+        let html_str = /*html*/`        
         <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is

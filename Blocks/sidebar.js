@@ -1,7 +1,7 @@
 import {renderBlock} from "../utils.js"
 
 export default (props) => {
-        let html_str = `        
+        let html_str = /*html*/`        
                <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->

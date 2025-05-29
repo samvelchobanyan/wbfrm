@@ -1,5 +1,5 @@
 export default (props) => {
-    let html_str = `        
+    let html_str = /*html*/`        
                 <section id="main-content">
                   <section class="wrapper site-min-height">
                     <test-component>adsadasdasd</test-component>

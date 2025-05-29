@@ -18,4 +18,4 @@ console.log('defining variables',main);
 render(header({'name':'testing123'}).html,head);
 render(sidebar().html,sidebar_container)
 render(footer().html,footer_container)
-// app.append('asdasdasd')
+render("asdasdasdasdasdasd",main)

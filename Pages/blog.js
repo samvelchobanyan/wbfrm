@@ -4,7 +4,7 @@ import header from "../Blocks/header.js"
 export default (props) => {
   console.log('blog');
   
-  let html_str = `
+  let html_str = /*html */`
         ${header(props.name).html}        
         <div style="width:100%; height:100px; background-color:#ccc">
             This is a blog page
