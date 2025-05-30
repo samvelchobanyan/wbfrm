@@ -10,7 +10,7 @@ const sidebar = document.getElementById('sidebar');
 const main = document.getElementById('main-content');
 const footer = document.getElementById('footer');
 
-page.base('/antireact');
+page.base('/wbfrm');
 page('/page1', ()=>{app.replaceChildren(blog({name:'header from blogs'}))});
 page('/news', news_cb);
 page('/',()=>{render(home,main)});

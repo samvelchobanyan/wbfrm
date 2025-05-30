@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/antireact.iml" filepath="$PROJECT_DIR$/.idea/antireact.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/wbfrm.iml" filepath="$PROJECT_DIR$/.idea/wbfrm.iml" />
     </modules>
   </component>
 </project>
