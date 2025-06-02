@@ -1,3 +1,4 @@
+import {renderBlock} from "../utils.js"
 export default (props) => {
     let html_str = /*html*/`        
                 <section id="main-content">
