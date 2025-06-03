@@ -1,6 +1,7 @@
 import blog from './Pages/blog.js';
 import news from "./Pages/news.js"
-import home from "./Blocks/main.js"
+import dashboard from "./Blocks/dashboard.js"
+import influencer_page from "./Pages/influencer.js"
 import {render, renderBlock} from './utils.js';
 // import "./Components/input.js"
 // const app = document.getElementById("app");
@@ -11,9 +12,9 @@ const main = document.getElementById('main-content');
 const footer = document.getElementById('footer');
 
 page.base('/wbfrm');
-page('/page1', ()=>{app.replaceChildren(blog({name:'header from blogs'}))});
 page('/news', news_cb);
-page('/',()=>{render(home(),main)});
+page('/influencer', influencer_cb);
+page('/',()=>{render(dashboard().html,main)});
 page();
 
 
@@ -21,10 +22,14 @@ function page1_cb(){
   main.replaceChildren(blog({name:'header from blogs'}))
 }
 function news_cb(){
+  console.log('news cb');
+  
   main.replaceChildren(news({name:'newsic sarqac header'}))
 }
-function home_cb(){
-  main.replaceChildren(home().fragment)
+function influencer_cb(){
+  console.log('home',dashboard().html);
+  
+  main.replaceChildren(influencer_page().fragment)
 }
 
 
