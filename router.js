@@ -14,7 +14,7 @@ const footer = document.getElementById('footer');
 page.base('/wbfrm');
 page('/news', news_cb);
 page('/influencer', influencer_cb);
-page('/',()=>{render(dashboard().html,main)});
+page('/',dashboard_cb);
 page();
 
 
@@ -27,9 +27,12 @@ function news_cb(){
   main.replaceChildren(news({name:'newsic sarqac header'}))
 }
 function influencer_cb(){
-  console.log('home',dashboard().html);
-  
   main.replaceChildren(influencer_page().fragment)
 }
 
+function dashboard_cb(){
+  console.log('dashboard');  
+  main.replaceChildren(dashboard().fragment)
+  // render(dashboard().html,main)
+}
 
