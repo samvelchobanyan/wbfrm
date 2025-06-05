@@ -30,9 +30,13 @@ function influencer_cb(){
   main.replaceChildren(influencer_page().fragment)
 }
 
-function dashboard_cb(){
+async function dashboard_cb(){
   console.log('dashboard');  
   main.replaceChildren(dashboard().fragment)
   // render(dashboard().html,main)
+
+  await import('./assets/libs/js/dashboard-ecommerce.js');
 }
+
+
 
