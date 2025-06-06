@@ -1,6 +1,6 @@
 import blog from './Pages/blog.js';
 import news from "./Pages/news.js"
-import dashboard from "./Blocks/dashboard.js"
+import dashboard from "./Pages/dashboard.js"
 import influencer_page from "./Pages/influencer.js"
 import {render, renderBlock} from './utils.js';
 // import "./Components/input.js"
@@ -27,13 +27,13 @@ function news_cb(){
   main.replaceChildren(news({name:'newsic sarqac header'}))
 }
 function influencer_cb(){
+  console.log('influencer route');
+  
   main.replaceChildren(influencer_page().fragment)
 }
 
 async function dashboard_cb(){
-  console.log('dashboard');  
   main.replaceChildren(dashboard().fragment)
-  // render(dashboard().html,main)
 
   await import('./assets/libs/js/dashboard-ecommerce.js');
 }
