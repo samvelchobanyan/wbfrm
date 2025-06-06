@@ -33,6 +33,7 @@ function influencer_cb(){
 }
 
 async function dashboard_cb(){
+  console.log('dashboard route');
   main.replaceChildren(dashboard().fragment)
 
   await import('./assets/libs/js/dashboard-ecommerce.js');
