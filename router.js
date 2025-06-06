@@ -34,7 +34,13 @@ function influencer_cb(){
 
 async function dashboard_cb(){
   console.log('dashboard route');
-  main.replaceChildren(dashboard().fragment)
+
+  const pageObj = dashboard();
+  main.replaceChildren(pageObj.fragment)
+  if (typeof pageObj.init === 'function') {
+        pageObj.init();
+  }
+  
 
   await import('./assets/libs/js/dashboard-ecommerce.js');
 }
