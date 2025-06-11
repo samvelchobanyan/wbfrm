@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Custom Element Render Guard Demo</title>
+    <style>
+      body { font-family: sans-serif; padding: 2rem; }
+      button { margin-right: 1rem; font-size: 1rem; }
+      #demo { padding: 1rem; border: 1px solid #999; margin-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <button id="removeBtn">Remove Element</button>
+    <button id="addBtn">Add Element</button>
+
+    <!-- Our custom element instance -->
+    <my-element id="demo"></my-element>
+
+    <script>
+      // 1) A base class that renders only once
+      class StaticElement extends HTMLElement {
+        connectedCallback() {
+          if (!this._hasRendered) {
+            this._hasRendered = true;
+            this.innerHTML = this.render();
+          }
+        }
+        // Subclasses override this
+        render() {
+          return '';
+        }
+      }
+
+      // 2) Define <my-element> that prints a timestamp
+      class MyElement extends StaticElement {
+        render() {
+          return `<p>Rendered at ${new Date().toLocaleTimeString()}</p>`;
+        }
+      }
+      customElements.define('my-element', MyElement);
+
+      // 3) Buttons to remove & re-add the element
+      const demo = document.getElementById('demo');
+      document.getElementById('removeBtn')
+        .addEventListener('click', () => demo.remove());
+      document.getElementById('addBtn')
+        .addEventListener('click', () => document.body.appendChild(demo));
+    </script>
+  </body>
+</html>
