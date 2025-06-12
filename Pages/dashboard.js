@@ -1,7 +1,11 @@
 import {renderBlock} from "../utils.js"
 import '../Components/static/card.js';
-export default (props) => {
+export default async (props) => {
     console.log('append main content');
+    const res = await fetch('./api/card-data.php?delay=5');
+    const data = await res.json();
+    
+
 
     function initJS(){
         $(function() {
@@ -268,8 +272,8 @@ export default (props) => {
                         <div class="row">
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <chart-card
-                                    value="150000"
-                                    percent="33"
+                                    value=${JSON.stringify(data.total.value)}
+                                    percent="${JSON.stringify(data.total.percent)}"
                                 />
                                 
                             </div>

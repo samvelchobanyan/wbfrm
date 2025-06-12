@@ -34,15 +34,16 @@ function influencer_cb(){
 
 async function dashboard_cb(){
   console.log('dashboard route');
+  main.innerHTML = `<div class="card p-4 text-center">Loading…</div>`;
 
-  const pageObj = dashboard();
+  const pageObj = await dashboard();
   main.replaceChildren(pageObj.fragment)
   if (typeof pageObj.init === 'function') {
         pageObj.init();
   }
   
 
-  await import('./assets/libs/js/dashboard-ecommerce.js');
+  // await import('./assets/libs/js/dashboard-ecommerce.js');
 }
 
 
