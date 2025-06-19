@@ -1,9 +1,10 @@
 // src/components/header-menu.js
+import '../Components/ui/selectbox.js';
 import { BaseElement } from '../core/base-element.js';
 
 export class HeaderMenu extends BaseElement {
   render() {
-    this.innerHTML = `
+    this.innerHTML = /*html*/`
       <style>
         .header_menu {
           display: flex;
@@ -18,6 +19,11 @@ export class HeaderMenu extends BaseElement {
       <div class="header_menu">
         <div>news</div>
         <div>blog</div>
+        <ui-select
+          placeholder="Choose a color"
+          class="border-radius stroke"
+          options='[{"label":"Red","value":"red"}, {"label":"Blue","value":"blue"}, {"label":"Green","value":"green"}]'
+        ></ui-select>
       </div>
     `;
   }
