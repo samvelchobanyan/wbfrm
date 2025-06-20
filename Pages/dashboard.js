@@ -1,5 +1,7 @@
 import {renderBlock} from "../utils.js"
 import '../Components/static/card.js';
+import '../Components/dynamic/color-block.js';
+  import '../Components/dynamic/color-panel.js';
 export default async (props) => {
     console.log('append main content');
     const res = await fetch('./api/card-data.php?delay=5');
@@ -267,6 +269,12 @@ export default async (props) => {
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
+                    <div class="row" style="width:100%; border: solid 1px; height:50px;">
+                        <p>Non-reactive color block:</p>
+                        <color-block></color-block>
+                        <p>Reactive color panel:</p>
+                        <color-panel></color-panel>
+                    </div>
                     <div class="ecommerce-widget">
 
                         <div class="row">

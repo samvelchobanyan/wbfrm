@@ -1,3 +1,5 @@
+import { store } from '../../core/store.js';
+
 // ui-select.js
 export class UISelect extends HTMLElement {
     static get observedAttributes() {
@@ -70,6 +72,10 @@ export class UISelect extends HTMLElement {
           const val = opt.getAttribute('data-value');
           this.setAttribute('value', val);
           this._open = false;
+
+           // Update global store
+            store.setState({ color: val });
+
           this.dispatchEvent(new CustomEvent('change', {
             detail: { value: val },
             bubbles: true
